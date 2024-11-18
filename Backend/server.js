@@ -1,16 +1,24 @@
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
-const cors = require("cors"); // Import CORS for handling cross-origin requests
-const multer = require("multer"); // Import multer for handling file uploads
-const app = express();
-const PORT = 8000; // Port for the backend server
+const cors = require("cors");
+const multer = require("multer");
 
-app.use(express.json());
-app.use(cors()); // Enable CORS for all routes
+const app = express();
+const PORT = 8000;
 
 const DATA_FILE = "./hotel-id.json";
-const UPLOAD_DIR = "./uploads"; // Directory for storing images
+const UPLOAD_DIR = "./uploads";
+
+// Enable CORS
+app.use(cors({
+  origin: "http://localhost:3000", // Your frontend URL
+  methods: "GET,POST,PUT",
+}));
+
+// Middleware for parsing JSON and URL-encoded data
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Ensure the upload directory exists
 if (!fs.existsSync(UPLOAD_DIR)) {
@@ -32,7 +40,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-// Utility functions to check, read, and write data
+// Utility functions for JSON file handling
 const fileExists = (filePath) => fs.existsSync(filePath);
 
 const readData = () => {
@@ -43,7 +51,7 @@ const readData = () => {
     const data = fs.readFileSync(DATA_FILE, "utf-8");
     return JSON.parse(data);
   } catch (error) {
-    console.error("Error reading data:", error);
+    console.error("Error reading data:", error.message);
     return { hotels: [] };
   }
 };
@@ -52,14 +60,15 @@ const writeData = (data) => {
   try {
     fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2));
   } catch (error) {
-    console.error("Error writing data:", error);
+    console.error("Error writing data:", error.message);
   }
 };
 
+// Routes
 // 1. Get all hotels
 app.get("/hotels", (req, res) => {
   const data = readData();
-  res.json(data.hotels); // Send only the hotels array as the response
+  res.json(data.hotels);
 });
 
 // 2. Get a hotel by ID
@@ -84,14 +93,15 @@ const slugify = (text) => {
     .replace(/\-\-+/g, "-"); // Replace multiple - with single -
 };
 
-// 3. Add a new hotel with slugified title
+// 3. Add a new hotel
 app.post("/hotels", (req, res) => {
-  const data = readData();
+  console.log("Received data:", req.body);
 
+  const data = readData();
   const newHotel = {
     id: data.hotels.length + 1,
     title: req.body.title,
-    slug: slugify(req.body.title), // Generate the slug from the title
+    slug: slugify(req.body.title),
     location: req.body.location,
     rooms: req.body.rooms,
     rating: req.body.rating,
@@ -110,6 +120,8 @@ app.post("/hotels", (req, res) => {
 
   data.hotels.push(newHotel);
   writeData(data);
+
+  console.log("New hotel added:", newHotel);
   res.status(201).json(newHotel);
 });
 
@@ -143,6 +155,7 @@ app.post("/hotels/images", upload.array("images"), (req, res) => {
   hotel.images = [...(hotel.images || []), ...imageUrls];
   writeData(data);
 
+  console.log(`Images uploaded for hotel ID ${hotelId}:`, imageUrls);
   res.status(200).json({ message: "Images uploaded successfully", images: imageUrls });
 });
 
@@ -153,4 +166,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = app; // This is necessary for testing
+module.exports = app; // Export for testing

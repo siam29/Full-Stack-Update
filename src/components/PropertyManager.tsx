@@ -6,6 +6,7 @@ import {
   faWater,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Image from "next/image";
 
 export default function PropertyManager() {
   return (
@@ -14,14 +15,21 @@ export default function PropertyManager() {
       <div className="space-y-4">
         <h2 className="text-xl font-bold">Property manager</h2>
         <div className="flex items-center gap-4">
-          <div className="w-12 h-12 rounded-full bg-green-200 flex items-center justify-center">
+          <div className="rounded-full flex items-center justify-center">
             {/* Add Logo or Placeholder */}
-            <span className="text-green-600 font-bold text-xl">E</span>
-          </div>
-          <div>
-            <h3 className="font-semibold">Evolve</h3>
+            <div style={{ width: "100%", maxWidth: "none" }}>
+  <Image
+    src="/images/logo.png"
+    alt="logo"
+    width={140}
+    height={140}
+    layout="intrinsic"
+  />
+</div>
+
           </div>
         </div>
+        <h3 className="font-semibold">Evolve</h3>
         <h3 className="text-lg font-bold">Languages</h3>
         <p className="text-gray-700">English, French, German, Spanish</p>
       </div>

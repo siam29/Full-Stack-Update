@@ -34,7 +34,7 @@ export default function Map() {
         {/* Amenities */}
         <h2 className="font-bold text-lg mb-2">Popular amenities</h2>
         <ul className="grid grid-cols-2 gap-2 text-gray-700 mb-6">
-          <li py-px>Barbecue grill</li>
+        <li className="py-px">Barbecue grill</li>
           <li>Outdoor Space</li>
           <li>Kitchen</li>
           <li>Washer</li>
