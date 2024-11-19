@@ -181,13 +181,13 @@ full-stack-update/
 │   │   ├── page.tsx       # Home page component
 │   │   └── styles.css     # Global styles
 │   ├── components/        # React components
-│ F |
-| R |
-| O |
-| N |
-| T |
-| E |
-| N |
+│ F |   |
+| R |   |
+| O |   |
+| N |   |
+| T |   |
+| E |   |
+| N |   |
 | D │   ├── AboutHost.tsx     # Component for host information
 │   │   ├── AboutProperty.tsx   # Component for property details
 │   │   ├── Amenities.tsx   # Component for displaying amenities
