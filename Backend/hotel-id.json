@@ -2,7 +2,7 @@
   "hotels": [
     {
       "id": 1,
-      "title": "Hotel Paradise58",
+      "title": "Hotel Paradise",
       "location": "Los Angeles",
       "rooms": 80,
       "rating": 8,
@@ -16,43 +16,8 @@
         "/uploads/image9.jpg"
       ],
       "description": "A luxurious getaway in Los Angeles.",
-      "guest_count": 150,
-      "bedroom_count": 40,
-      "bathroom_count": 20,
-      "amenities": ["Spa", "Free Parking", "Gym"],
-      "host_information": {
-        "host_name": "Jane Smith",
-        "contact": "jane.smith@example.com"
-      },
-      "address": "456 Paradise Rd, Los Angeles, CA",
-      "latitude": 34.0522,
-      "longitude": -118.2437,
-      "room_information": [
-        {
-          "hotel_slug": "hotel-paradise",
-          "room_slug": "room-1",
-          "room_image": "image3.jpg",
-          "room_title": "Mountain View Suite",
-          "bedroom_count": 1,
-          "bathroom_count": 1
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "title": "Hotel Paradise",
-      "location": "Los Angeles",
-      "rooms": 80,
-      "rating": 4,
-      "images": [
-        "/uploads/image3.jpg",
-        "/uploads/image5.jpg",
-        "/uploads/image1.jpg",
-        "/uploads/image2.jpg"
-      ],
-      "description": "A luxurious getaway in Los Angeles.",
-      "guest_count": 150,
-      "bedroom_count": 40,
+      "guest_count": 100,
+      "bedroom_count": 30,
       "bathroom_count": 20,
       "amenities": ["Spa", "Free Parking", "Gym"],
       "host_information": {
@@ -75,11 +40,144 @@
     },
     {
       "id": 3,
-      "title": "Hotel Sunshine3",
-      "location": "New York",
+      "title": "Majestic Manor",
+      "location": "Berlin",
       "rooms": 103,
       "rating": 4.5,
-      "images": ["/uploads/image1.jpg", "/uploads/image2.jpg"],
+      "images": ["/uploads/image9.jpg", "/uploads/img-20.webp"],
+      "description": "A beautiful hotel located in the heart of New York.",
+      "guest_count": 200,
+      "bedroom_count": 50,
+      "bathroom_count": 25,
+      "amenities": ["Free WiFi", "Pool", "Gym"],
+      "host_information": {
+        "host_name": "John Doe",
+        "contact": "john.doe@example.com"
+      },
+      "address": "123 Sunshine St, New York, NY",
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "room_information": [
+        {
+          "hotel_slug": "majestic-manor",
+          "room_slug": "room-1",
+          "room_image": "image1.jpg",
+          "room_title": "Ocean View Suite",
+          "bedroom_count": 2,
+          "bathroom_count": 1
+        }
+      ]
+    },
+    {
+      "id": 59,
+      "title": "Luxe Lagoon",
+      "slug": "luxe-lagoon",
+      "location": "Los Angeles",
+      "rooms": 80,
+      "rating": 3,
+      "images": [
+        "/uploads/img-14.jpg",
+        "/uploads/img-19.webp",
+        "/uploads/1731927815344-image10.jpeg"
+      ],
+      "description": "A luxurious getaway in Los Angeles.",
+      "guest_count": 190,
+      "bedroom_count": 250,
+      "bathroom_count": 80,
+      "amenities": ["Swimming Pool", "Free Parking", "Gym"],
+      "host_information": {
+        "host_name": "Jane Smith",
+        "contact": "jane.smith@example.com"
+      },
+      "address": "456 Paradise Rd, Los Angeles, CA",
+      "latitude": 34.0522,
+      "longitude": -118.2437,
+      "room_information": [
+        {
+          "hotel_slug": "luxe-lagoon",
+          "room_slug": "room-1",
+          "room_image": "image3.jpg",
+          "room_title": "Mountain View Suite",
+          "bedroom_count": 1,
+          "bathroom_count": 1
+        }
+      ]
+    },
+    {
+      "id": 60,
+      "title": "Royal Respite ",
+      "slug": "royal-respite",
+      "location": "Los Angeles",
+      "rooms": 70,
+      "rating": 7.5,
+      "images": ["/uploads/img-18.jpeg"],
+      "description": "A luxurious getaway in Los Angeles.",
+      "guest_count": 90,
+      "bedroom_count": 5,
+      "bathroom_count": 30,
+      "amenities": ["Spa", "Free Parking", "Free WiFi"],
+      "host_information": {
+        "host_name": "Jane Smith",
+        "contact": "jane.smith@example.com"
+      },
+      "address": "456 Paradise Rd, Los Angeles, CA",
+      "latitude": 34.0522,
+      "longitude": -118.2437,
+      "room_information": [
+        {
+          "hotel_slug": "royal-respite",
+          "room_slug": "room-1",
+          "room_image": "image3.jpg",
+          "room_title": "Mountain View Suite",
+          "bedroom_count": 1,
+          "bathroom_count": 1
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Opulent Oasis",
+      "slug": "opulent-oasis",
+      "location": "Dhaka",
+      "rooms": 60,
+      "rating": 8.2,
+      "images": [
+        "/uploads/img-14.jpg",
+        "/uploads/img-15.jpg",
+        "/uploads/img-18.jpeg",
+        "/uploads/img-20.webp"
+      ],
+      "description": "A luxurious getaway in Los Angeles.",
+      "guest_count": 100,
+      "bedroom_count": 10,
+      "bathroom_count": 20,
+      "amenities": ["Spa", "Free Parking", "Gym"],
+      "host_information": {
+        "host_name": "Jane Smith",
+        "contact": "jane.smith@example.com"
+      },
+      "address": "456 Paradise Rd, Los Angeles, CA",
+      "latitude": 34.0522,
+      "longitude": -118.2437,
+      "room_information": [
+        {
+          "hotel_slug": "opulent-oasis",
+          "room_slug": "room-1",
+          "room_image": "image3.jpg",
+          "room_title": "Mountain View Suite",
+          "bedroom_count": 1,
+          "bathroom_count": 1
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Majestic Manor",
+      "slug": "majestic-manor",
+      "location": "New York",
+      "rooms": 50,
+      "rating": 4.5,
+      "images": ["/uploads/img-17.webp", "/uploads/image2.jpg"],
       "description": "A beautiful hotel located in the heart of New York.",
       "guest_count": 200,
       "bedroom_count": 50,
@@ -99,72 +197,6 @@
           "room_image": "image1.jpg",
           "room_title": "Ocean View Suite",
           "bedroom_count": 2,
-          "bathroom_count": 1
-        }
-      ]
-    },
-    {
-      "id": 59,
-      "title": "Hotel Paradise58",
-      "slug": "hotel-paradise58",
-      "location": "Los Angeles",
-      "rooms": 80,
-      "rating": 4,
-      "images": [
-        "/uploads/image3.jpg",
-        "/uploads/image5.jpg",
-        "/uploads/1731927815344-image10.jpeg"
-      ],
-      "description": "A luxurious getaway in Los Angeles.",
-      "guest_count": 150,
-      "bedroom_count": 40,
-      "bathroom_count": 20,
-      "amenities": ["Spa", "Free Parking", "Gym"],
-      "host_information": {
-        "host_name": "Jane Smith",
-        "contact": "jane.smith@example.com"
-      },
-      "address": "456 Paradise Rd, Los Angeles, CA",
-      "latitude": 34.0522,
-      "longitude": -118.2437,
-      "room_information": [
-        {
-          "hotel_slug": "hotel-paradise",
-          "room_slug": "room-1",
-          "room_image": "image3.jpg",
-          "room_title": "Mountain View Suite",
-          "bedroom_count": 1,
-          "bathroom_count": 1
-        }
-      ]
-    },
-    {
-      "id": 60,
-      "title": "Hotel Paradise58",
-      "slug": "hotel-paradise58",
-      "location": "Los Angeles",
-      "rooms": 80,
-      "rating": 4,
-      "images": ["/uploads/image3.jpg"],
-      "description": "A luxurious getaway in Los Angeles.",
-      "guest_count": 150,
-      "bedroom_count": 40,
-      "bathroom_count": 20,
-      "amenities": ["Spa", "Free Parking", "Gym"],
-      "host_information": {
-        "host_name": "Jane Smith",
-        "contact": "jane.smith@example.com"
-      },
-      "address": "456 Paradise Rd, Los Angeles, CA",
-      "latitude": 34.0522,
-      "longitude": -118.2437,
-      "room_information": [
-        {
-          "hotel_slug": "hotel-paradise",
-          "room_slug": "room-1",
-          "room_image": "image3.jpg",
-          "room_title": "Mountain View Suite",
-          "bedroom_count": 1,
           "bathroom_count": 1
         }
       ]
