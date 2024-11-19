@@ -142,7 +142,7 @@ const PropertyGallery = ({ title, images }: PropertyGalleryProps) => {
             {/* Close Button */}
             <button
               onClick={closeImage}
-              className="absolute top-2 right-4 text-3xl font-bold cursor-pointer"
+              className="absolute -top-10 right-4 text-3xl font-bold text-black-500 cursor-pointer"
             >
               &times;
             </button>
@@ -159,7 +159,7 @@ const PropertyGallery = ({ title, images }: PropertyGalleryProps) => {
 
             {/* Image Navigation */}
             <div
-              className={`absolute left-4 top-1/2 transform -translate-y-1/2 text-3xl font-bold cursor-pointer ${
+              className={`absolute -left-10 top-1/2 transform -translate-y-1/2 text-3xl font-bold cursor-pointer ${
                 selectedImageIndex === 0 ? "text-gray-500" : "text-white"
               }`}
               onClick={goToPreviousImage}
@@ -167,7 +167,7 @@ const PropertyGallery = ({ title, images }: PropertyGalleryProps) => {
               &#8249;
             </div>
             <div
-              className={`absolute right-4 top-1/2 transform -translate-y-1/2 text-3xl font-bold cursor-pointer ${
+              className={`absolute -right-10 top-1/2 transform -translate-y-1/2 text-3xl font-bold cursor-pointer ${
                 selectedImageIndex === images.length - 1
                   ? "text-gray-500"
                   : "text-white"

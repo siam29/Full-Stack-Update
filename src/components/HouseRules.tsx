@@ -13,7 +13,7 @@ export default function HouseRules() {
       <div className="py-16 grid grid-cols-3">
         <h2 className="text-xl font-bold">House Rules</h2>
         <div>
-          <div className="pl-60">
+          <div>
             {/* Left Section */}
             <div className="space-y-4">
               <p>Check in after 3:00 PM</p>

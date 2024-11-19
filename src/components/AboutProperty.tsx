@@ -1,14 +1,19 @@
-export default function AboutThisProperty() {
+type AboutThisPropertyProps = {
+  hotel: {
+    title: string;
+    description: string;
+  };
+};
+
+export default function AboutThisProperty({ hotel }: AboutThisPropertyProps) {
   return (
-    <div className=" container mx-auto space-y-6">
+    <div className="container mx-auto space-y-6">
       {/* Title Section */}
       <h1 className="text-2xl font-bold">About this property</h1>
 
       {/* Property Overview */}
       <div>
-        <h2 className="text-xl font-bold">
-          Juneau Vacation Home: Stunning View + Beach Access
-        </h2>
+        <h2 className="text-xl font-bold">{hotel.title}</h2>
         <p className="text-gray-700 mt-4">
           Escape to the mountains and experience the great outdoors at this
           lovely Juneau vacation rental! Perched on the shore of Lena Cove, this
@@ -113,3 +118,4 @@ export default function AboutThisProperty() {
     </div>
   );
 }
+  

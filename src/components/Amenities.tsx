@@ -13,9 +13,9 @@ import Image from "next/image";
 export default function PropertyManager() {
     return (
 
-<div>
+<div className="pt-16 container mx-auto space-y-4">
         <div className="text-xl font-bold ">Amenities</div>
-        <div className="px-32">
+       
           <div className="grid grid-cols-3 md:grid-cols-3 gap-4 text-gray-700 pr-9">
             <div className="flex items-center gap-2">
               <FontAwesomeIcon
@@ -67,7 +67,7 @@ export default function PropertyManager() {
             See all 34 amenities
           </a>
         </div>
-      </div>
+   
 
     );
 }

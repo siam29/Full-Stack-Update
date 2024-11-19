@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Navbar from "@/components/Navbar";
 import AboutHost from "@/components/AboutHost";
-import AboutProperty from "@/components/AboutProperty";
+import AboutThisProperty from "@/components/AboutProperty";
 import CancellationPolicy from "@/components/CancellationPolicy";
 import HeaderActions from "@/components/HeaderActions";
 import HouseRules from "@/components/HouseRules";
@@ -22,6 +22,7 @@ import Amenities from "@/components/Amenities";
 
 
 type Hotel = {
+  id: number;
   title: string;
   description: string;
   location: string;
@@ -29,22 +30,28 @@ type Hotel = {
   rooms: number;
   rating: number;
   amenities: string[];
-  host_information: {
-    host_name: string;
-    contact: string;
-  };
+  bedroom_count: number;
+  bathroom_count: number;
+  room_information: {
+    room_title: string;
+    bedroom_count: number;
+    bathroom_count: number;
+  }[];
 };
 
-const HotelDetails = ({ params }: { params: { id: string; slug: string } }) => {
-  const { id } = params;
+
+
+  const HotelDetails = ({ params }: { params: { id: string } }) => {
   const [hotel, setHotel] = useState<Hotel | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-
+  
+  
+  
   useEffect(() => {
     const fetchHotel = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/hotels/${id}`);
+        const response = await axios.get(`http://localhost:8000/hotels/${params.id}`);
         setHotel(response.data);
         setLoading(false);
       } catch (err) {
@@ -55,19 +62,12 @@ const HotelDetails = ({ params }: { params: { id: string; slug: string } }) => {
     };
 
     fetchHotel();
-  }, [id]);
+  }, [params.id]);
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>{error}</div>;
+  if (!hotel) return <div>Hotel not found</div>;
 
-  if (error) {
-    return <div>{error}</div>;
-  }
-
-  if (!hotel) {
-    return <div>Hotel not found</div>;
-  }
 
   return (
     <div>
@@ -75,9 +75,19 @@ const HotelDetails = ({ params }: { params: { id: string; slug: string } }) => {
       <HeaderActions />
       <PropertyGallery images={hotel.images} />
       <Tab />
-      <Map location={hotel.location} />
-      <RoomsAndBeds rooms={hotel.rooms} />
-      <AboutProperty description={hotel.description} amenities={hotel.amenities} />
+      <Map
+        hotel={{
+          title: hotel.title,
+          rooms: hotel.rooms,
+          amenities: hotel.amenities,
+          rating: hotel.rating
+        }}
+      />      <RoomsAndBeds
+      rooms={hotel.room_information}
+      totalBedrooms={hotel.bedroom_count}
+      totalBathrooms={hotel.bathroom_count}
+    />
+      <AboutThisProperty hotel={{ title: hotel.title, description: hotel.description }} />
       <PropertyManager />
       <Amenities />
       <QuestionSection />

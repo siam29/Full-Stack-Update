@@ -4,16 +4,27 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default function Map() {
+type MapProps = {
+  hotel: {
+    title: string;
+    rooms: number;
+    amenities: string[];
+    rating: number;
+  };
+};
+
+export default function Map({ hotel }: MapProps) {
   return (
-    <div className="flex flex-col lg:flex-row gap-8 p-6 bg-white-100 container mx-auto p-4">
+    <div className="flex flex-col lg:flex-row gap-8 bg-white-100 container mx-auto ">
+      {/* Map Section Navbar */}
+      
+
       {/* Left Section */}
-      <div className="flex-1 p-6 ">
-        <h1 className="text-2xl font-bold mb-4">
-          Juneau Vacation Home: Stunning View + Beach Access
-        </h1>
+      <div className="flex-1 p-6">
+        {/* Hotel Title */}
+        <h1 className="text-2xl font-bold mb-4">{hotel.title}</h1>
         <p className="text-green-700 font-semibold mb-4 text-lg">
-          9.8 Exceptional
+        {hotel.rating}
         </p>
         <a href="#" className="text-blue-600 underline mb-6 block">
           See all 24 reviews
@@ -22,8 +33,8 @@ export default function Map() {
         {/* Property Info */}
         <div className="grid grid-cols-2 gap-4 text-gray-700 mb-6">
           <div>
-            <p>2 bedrooms</p>
-            <p>Sleeps 4</p>
+            <p>{hotel.rooms} bedrooms</p>
+            <p>Sleeps {hotel.rooms * 2}</p> {/* Assuming 2 guests per room */}
           </div>
           <div>
             <p>1 bathroom</p>
@@ -34,12 +45,9 @@ export default function Map() {
         {/* Amenities */}
         <h2 className="font-bold text-lg mb-2">Popular amenities</h2>
         <ul className="grid grid-cols-2 gap-2 text-gray-700 mb-6">
-        <li className="py-px">Barbecue grill</li>
-          <li>Outdoor Space</li>
-          <li>Kitchen</li>
-          <li>Washer</li>
-          <li>Parking available</li>
-          <li>Dryer</li>
+          {hotel.amenities.map((amenity, index) => (
+            <li key={index}>{amenity}</li>
+          ))}
         </ul>
         <a href="#" className="text-blue-600 ">
           See all property amenities
@@ -47,7 +55,7 @@ export default function Map() {
 
         {/* Explore the Area */}
         <h2 className="font-bold text-lg mt-6 mb-4">Explore the area</h2>
-        <div className="flex items-start gap-4 ">
+        <div className="flex items-start gap-4">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2097.0839637115723!2d-134.43189642295565!3d58.290757774128096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x68f06e3c3e7ea427%3A0xacd4bcc175dafd21!2sJuneau%20Vacation%20Homes!5e0!3m2!1sen!2sbd!4v1731729333232!5m2!1sen!2sbd"
             width="400"
@@ -111,8 +119,8 @@ export default function Map() {
       </div>
 
       {/* Right Section */}
-      <div className="w-full lg:w-1/3  p-6 ">
-        <div className="bg-blue-950	 p-4 rounded-lg mb-4 text-center">
+      <div className="w-full lg:w-1/3 p-6">
+        <div className="bg-blue-950 p-4 rounded-lg mb-4 text-center">
           <p className="text-white font-semibold">
             Members get our best prices when signed in!
           </p>
@@ -166,7 +174,7 @@ export default function Map() {
           Book now
         </button>
 
-        <a href="#" className="block mt-4 text-center text-blue-600 ">
+        <a href="#" className="block mt-4 text-center text-blue-600">
           Contact host
         </a>
       </div>
