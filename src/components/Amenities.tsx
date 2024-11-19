@@ -6,25 +6,28 @@ import {
   faWater,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Image from "next/image";
-
-
 
 export default function PropertyManager() {
-    return (
+  return (
+    <div className="py-16 container mx-auto space-y-8">
+      {/* Flex container for Amenities and other sections */}
+      <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8">
+        {/* Amenities Section */}
+        <div className="lg:w-1/2">
+          <div className="text-3xl font-bold mb-4">Amenities</div>
+        </div>
 
-<div className="pt-16 container mx-auto space-y-4">
-        <div className="text-xl font-bold ">Amenities</div>
-       
-          <div className="grid grid-cols-3 md:grid-cols-3 gap-4 text-gray-700 pr-9">
-            <div className="flex items-center gap-2">
+        {/* Placeholder for remaining parts */}
+        <div className="lg:w-1/2">
+          <div className="grid grid-cols-2 md:grid-cols-3  text-gray-700">
+            <div className="flex items-center">
               <FontAwesomeIcon
                 icon={faUtensils}
                 className="h-5 w-5 text-black-700"
               />
               <span>Kitchen</span>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center ">
               <FontAwesomeIcon
                 icon={faTshirt}
                 className="h-5 w-5 text-black-700"
@@ -67,7 +70,7 @@ export default function PropertyManager() {
             See all 34 amenities
           </a>
         </div>
-   
-
-    );
+      </div>
+    </div>
+  );
 }
