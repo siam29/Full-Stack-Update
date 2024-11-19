@@ -181,21 +181,14 @@ full-stack-update/
 │   │   ├── page.tsx       # Home page component
 │   │   └── styles.css     # Global styles
 │   ├── components/        # React components
-│ F |   |
-| R |   |
-| O |   |
-| N |   |
-| T |   |
-| E |   |
-| N |   |
-| D │   ├── AboutHost.tsx     # Component for host information
-│   │   ├── AboutProperty.tsx   # Component for property details
-│   │   ├── Amenities.tsx   # Component for displaying amenities
-│   │   ├── Api.tsx                # API integration component
-│   │   ├── CancellationPolicy.tsx # cancellation policies
-│   │   ├── FirstPage.tsx          # Landing page component
-│   │   ├── HeaderActions.tsx      # Header action buttons
-│   │   ├── HouseRules.tsx         # Component for house rules
+| F ├── AboutHost.tsx     # Component for host information
+│ R │   ├── AboutProperty.tsx   # Component for property details
+│ O │   ├── Amenities.tsx   # Component for displaying amenities
+│ N │   ├── Api.tsx                # API integration component
+│ T │   ├── CancellationPolicy.tsx # cancellation policies
+│ E │   ├── FirstPage.tsx          # Landing page component
+│ N │   ├── HeaderActions.tsx      # Header action buttons
+│ D │   ├── HouseRules.tsx         # Component for house rules
 │   │   ├── ImportantInformation.tsx # important details
 │   │   ├── Map.tsx                # Map component
 │   │   ├── Navbar.tsx             # Navigation bar
