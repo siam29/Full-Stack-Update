@@ -3,7 +3,7 @@ This is a full-stack web application built with React (Next.js) for the frontend
 
 # Features #
 ## Frontend ##
-🚀 Next.js for Server-Side Rendering (SSR) and static generation.
+- 🚀 Next.js for Server-Side Rendering (SSR) and static generation.
 📱 Responsive UI built with TailwindCSS.
 🖼️ Property Gallery:
 Displays hotel images in a clean and organized layout.
