@@ -1,25 +1,24 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import axios from "axios";
-import Navbar from "@/components/Navbar";
 import AboutHost from "@/components/AboutHost";
 import AboutThisProperty from "@/components/AboutProperty";
+import Amenities from "@/components/Amenities";
 import CancellationPolicy from "@/components/CancellationPolicy";
 import HeaderActions from "@/components/HeaderActions";
 import HouseRules from "@/components/HouseRules";
 import ImportantInformation from "@/components/ImportantInformation";
 import Map from "@/components/Map";
+import Navbar from "@/components/Navbar";
+import PropertyGallery from "@/components/property-gallery";
 import PropertyManager from "@/components/PropertyManager";
 import Question from "@/components/Question";
 import QuestionSection from "@/components/QuestionSection";
 import Reviews from "@/components/Reviews";
 import RoomsAndBeds from "@/components/RoomandBed";
-import Tab from "@/components/Tab";
-import PropertyGallery from "@/components/property-gallery";
 import SendMessage from "@/components/SendMessage";
-import Amenities from "@/components/Amenities";
-
+import Tab from "@/components/Tab";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 type Hotel = {
   id: number;
@@ -39,19 +38,17 @@ type Hotel = {
   }[];
 };
 
-
-
-  const HotelDetails = ({ params }: { params: { id: string } }) => {
+const HotelDetails = ({ params }: { params: { id: string } }) => {
   const [hotel, setHotel] = useState<Hotel | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  
-  
-  
+
   useEffect(() => {
     const fetchHotel = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/hotels/${params.id}`);
+        const response = await axios.get(
+          `http://localhost:8000/hotels/${params.id}`
+        );
         setHotel(response.data);
         setLoading(false);
       } catch (err) {
@@ -68,11 +65,12 @@ type Hotel = {
   if (error) return <div>{error}</div>;
   if (!hotel) return <div>Hotel not found</div>;
 
-
   return (
     <div>
       <Navbar />
-      <HeaderActions />
+      <HeaderActions
+        hotel={{ title: hotel.title, description: hotel.description }}
+      />
       <PropertyGallery images={hotel.images} />
       <Tab />
       <Map
@@ -80,14 +78,15 @@ type Hotel = {
           title: hotel.title,
           rooms: hotel.rooms,
           amenities: hotel.amenities,
-          rating: hotel.rating
+          rating: hotel.rating,
         }}
-      />      <RoomsAndBeds
-      rooms={hotel.room_information}
-      totalBedrooms={hotel.bedroom_count}
-      totalBathrooms={hotel.bathroom_count}
-    />
-      <AboutThisProperty hotel={{ title: hotel.title, description: hotel.description }} />
+      />{" "}
+      <RoomsAndBeds
+        rooms={hotel.room_information}
+        totalBedrooms={hotel.bedroom_count}
+        totalBathrooms={hotel.bathroom_count}
+      />
+      <AboutThisProperty hotel={hotel} />
       <PropertyManager />
       <Amenities />
       <QuestionSection />
