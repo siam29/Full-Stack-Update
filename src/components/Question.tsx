@@ -34,11 +34,11 @@ export default function Question() {
   ];
 
   return (
-    <div className="pt-16 container mx-auto">
-      <h2 className="flex flex-col lg:flex-row ">
-        <div className="text-2xl font-bold pr-72">
+    <div className="p container mx-auto  grid grid-cols-3 my-10">
+      <h2 className="text-3xl font-bold text-gray-800 mb-4">Frequently asked questions</h2>
+      <div className="flex justify-between text-sm font-medium text-gray-500">
+      <div className="col-span-2">
           {" "}
-          Frequently asked questions{" "}
         </div>
         {/* FAQ List */}
         <ul className="space-y-4">
@@ -67,7 +67,8 @@ export default function Question() {
             </li>
           ))}
         </ul>
-      </h2>
+      </div>
+        
     </div>
   );
 }

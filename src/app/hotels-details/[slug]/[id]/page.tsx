@@ -17,6 +17,9 @@ import Reviews from "@/components/Reviews";
 import RoomsAndBeds from "@/components/RoomandBed";
 import Tab from "@/components/Tab";
 import PropertyGallery from "@/components/property-gallery";
+import SendMessage from "@/components/SendMessage";
+import Amenities from "@/components/Amenities";
+
 
 type Hotel = {
   title: string;
@@ -76,6 +79,7 @@ const HotelDetails = ({ params }: { params: { id: string; slug: string } }) => {
       <RoomsAndBeds rooms={hotel.rooms} />
       <AboutProperty description={hotel.description} amenities={hotel.amenities} />
       <PropertyManager />
+      <Amenities />
       <QuestionSection />
       <HouseRules />
       <CancellationPolicy />
@@ -83,6 +87,7 @@ const HotelDetails = ({ params }: { params: { id: string; slug: string } }) => {
       <Question />
       <Reviews />
       <AboutHost host={hotel.host_information} />
+      <SendMessage />
       {/* <h1>{hotel.title}</h1>
       <p>{hotel.description}</p> */}
       {/* <div>

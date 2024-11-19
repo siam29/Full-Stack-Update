@@ -1,16 +1,13 @@
 export default function ImportantInformation() {
   return (
-    <div className="p-6 container mx-auto">
-      <h2 className=" flex flex-col lg:flex-row  ">
-        <div className="text-2xl font-bold"> Important information </div>
+    <div className="p container mx-auto  grid grid-cols-3 my-20">
+      <h2 className="font-bold text-black-800 text-3xl ">Important information </h2>
         {/* Flex Layout for Title and Content */}
-        <div className="flex flex-col lg:flex-row">
-          {/* Title Section */}
-          <h3 className="text-lg font-semibold flex-shrink-0 lg:w-1/3"></h3>
+        <div className="col-span-2">
 
           {/* Content Section */}
           <div className="text-black-700 space-y-4 ">
-            <p className="text-lg font-semibold">You need to know</p>
+            <p className="flex justify-between text-2xl font-medium text-black-500">You need to know</p>
             <p>
               Extra-person charges may apply and vary depending on property
               policy
@@ -36,7 +33,6 @@ export default function ImportantInformation() {
             </p>
           </div>
         </div>
-      </h2>
     </div>
   );
 }

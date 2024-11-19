@@ -10,7 +10,7 @@ export default function HouseRules() {
   return (
     <div className="pt-16 container mx-auto space-y-4">
       {/* House Rules Section */}
-      <div className="py-6 flex flex-col lg:flex-row items-start gap-60">
+      <div className="py-16 grid grid-cols-3">
         <h2 className="text-xl font-bold">House Rules</h2>
         <div>
           <div className="pl-60">
@@ -74,13 +74,13 @@ export default function HouseRules() {
       </div>
 
       {/* Damage and Incidentals Section */}
-      <div className="py-16 flex flex-col lg:flex-row   ">
+      <div className="py-16 grid grid-cols-3   ">
         {/* Title Section */}
-        <h2 className="text-xl font-bold ">Damage and incidentals</h2>
+        <h2 className="text-3xl font-bold ">Damage and incidentals</h2>
 
         {/* Description Section */}
-        <div className="pl-72">
-          <p className="text-gray-700   pl-28">
+        <div className="col-span-2">
+          <p className="text-gray-700">
             You will be responsible for any damage to the rental property caused
             by you or your party during your stay.
           </p>
