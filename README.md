@@ -175,40 +175,41 @@ full-stack-update/
 │   ├── server.js          # Express server
 │   ├── hotel-id.json      # Mock database
 │   └── uploads/           # Uploaded images
-├── public/                # Public assets
-├── src/                   # Frontend code
-│   ├── app/               # Next.js app folder
-│   │   ├── layout.tsx     # Main layout for the application
-│   │   ├── page.tsx       # Home page component
-│   │   └── styles.css     # Global styles
-│   ├── components/        # React components
-| F ├── AboutHost.tsx     # Component for host information
-│ R │   ├── AboutProperty.tsx   # Component for property details
-│ O │   ├── Amenities.tsx   # Component for displaying amenities
-│ N │   ├── Api.tsx                # API integration component
-│ T │   ├── CancellationPolicy.tsx # cancellation policies
-│ E │   ├── FirstPage.tsx          # Landing page component
-│ N │   ├── HeaderActions.tsx      # Header action buttons
-│ D │   ├── HouseRules.tsx         # Component for house rules
-│   │   ├── ImportantInformation.tsx # important details
-│   │   ├── Map.tsx                # Map component
-│   │   ├── Navbar.tsx             # Navigation bar
-│   │   ├── PropertyGallery.tsx    # Image gallery  properties
-│   │   ├── PropertyManager.tsx   # Property management features
-│   │   ├── Question.tsx           # Frequently asked questions
-│   │   ├── QuestionSection.tsx    # FAQ section component
-│   │   ├── Reviews.tsx            # Review display
-│   │   ├── RoomAndBed.tsx         # Room and bed details
-│   │   ├── SendMessage.tsx        # Contact host form
-│   │   └── Tab.tsx             # Tab-based navigation component
-│   └── __tests__/         # Test files
-│       ├── components/    # Unit tests for components
-│       └── utils/         # Helper test utilities
-├── jest.setup.ts      # Jest setup file for initializing test 
-├── jest.config.ts     # Jest configuration file for test runner
-├── package.json           # Project metadata and dependencies
-├── tailwind.config.ts     # TailwindCSS configuration
-└── README.md              # Documentation and usage details
+├── Frontend/ 
+    ├──public/                # Public assets
+    ├──src/                   # Frontend code
+    |    ├── app/               # Next.js app folder
+    |    ├── layout.tsx     # Main layout for the application
+    │   ├── page.tsx       # Home page component
+    │   └── styles.css     # Global styles
+    |    ├── components/        # React components
+    |          ├── AboutHost.tsx     # Component for host information
+    |          ├── AboutProperty.tsx   # Component for property details
+    │          ├── Amenities.tsx   # Component for displaying amenities
+    |          ├── Api.tsx                # API integration component
+    |          ├── CancellationPolicy.tsx # cancellation policies
+    │          ├── FirstPage.tsx          # Landing page component
+    │          ├── HeaderActions.tsx      # Header action buttons
+    │          ├── HouseRules.tsx         # Component for house rules
+    │          ├── ImportantInformation.tsx # important details
+    |          ├── Map.tsx                # Map component
+    |          ├── Navbar.tsx             # Navigation bar
+    |          ├── PropertyGallery.tsx    # Image gallery  properties
+    |          ├── PropertyManager.tsx   # Property management features
+    |          ├── Question.tsx           # Frequently asked questions
+    |          ├── QuestionSection.tsx    # FAQ section component
+    |          ├── Reviews.tsx            # Review display
+    |          ├── RoomAndBed.tsx         # Room and bed details
+    |          ├── SendMessage.tsx        # Contact host form
+    |          └── Tab.tsx             # Tab-based navigation component
+    |          └── __tests__/         # Test files
+    |                ├── components/    # Unit tests for components
+    |                └── utils/         # Helper test utilities
+    ├── jest.setup.ts      # Jest setup file for initializing test 
+    ├── jest.config.ts     # Jest configuration file for test runner
+    ├── package.json           # Project metadata and dependencies
+    ├── tailwind.config.ts     # TailwindCSS configuration
+    └── README.md              # Documentation and usage details
 ```
 
 ## 🔧 Necessary Installations
