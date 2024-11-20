@@ -1,116 +1,258 @@
-# Hotel Management API
+# Overview
 
-A simple and powerful API for managing hotels, including functionality to get hotel details, add new hotels, update hotel information, and upload images for hotels. This project is built with **Node.js**, **Express.js**, and **Multer** for handling file uploads.
+This is a full-stack web application built with React (Next.js) for the frontend and Node.js (Express) for the backend. The application showcases a property listing feature with functionality to view image galleries, details, and a fully operational REST API for managing data.
 
-##  📂 Project Structure
+# Features
 
-```plaintext
-PRACTICE/
-│
-├── uploads/                # Directory for storing uploaded images
-│   ├── image1.jpg          # Sample image 1
-│   ├── image2.jpg          # Sample image 2
-│   └── image3.jpg          # Sample image 3
-├── hotel-id.json           # The data file for storing hotel information
-├── server.js               # Main application code
-└── package.json            # npm package configuration file
-└── server.test.js          #Testing all of the testcase
+### Frontend
 
-```
+- 🚀 **Next.js** for Server-Side Rendering (SSR) and static generation.
+- **React**: Component-based UI development for dynamic and reusable UI elements.
+- **TailwindCSS**: Utility-first CSS framework for rapid and responsive design.
 
-## 🚀Features
+- 📱 Responsive UI built with TailwindCSS.
+- 🖼️ **Property Gallery:**
+  - Displays hotel images in a clean and organized layout.
+  - Supports modal-based image viewing for better user experience.
+- 🎨 **Accessible Design:** Ensures the application is easy to use and visually appealing.
 
-This project provides the following API endpoints:
+### 🛠️ Backend
 
-### 1. **Get a list of all hotels**
-   - **Endpoint**: `GET /hotels`
-   - **Description**: Retrieve a list of all hotels in the system.
-   - **Response**: A JSON array of hotel objects.
+- **Node.js** and **Express** for the backend server.
+- 🌐 **RESTful API** to manage hotel data efficiently.
+- 📤 **File Upload** functionality using **Multer** for handling image uploads.
+- 🗃️ **Data Storage**:
 
-### 2. **Get a hotel by ID**
-   - **Endpoint**: `GET /hotels/:id`
-   - **Description**: Retrieve details of a hotel by its unique ID.
-   - **Parameters**: 
-     - `id` (Hotel ID): The ID of the hotel you want to fetch.
-   - **Response**: A JSON object containing the hotel details.
+  - Utilizes **JSON files** for lightweight and easy-to-manage data storage.
+  - _(Future Enhancement)_: Designed to seamlessly connect with a database for better scalability and performance.
 
-### 3. **Add a new hotel**
-   - **Endpoint**: `POST /hotels`
-   - **Description**: Create a new hotel entry in the system.
-   - **Request Body**: A JSON object containing the following properties:
-     ```json
-     {
-       "title": "Hotel Name",
-       "location": "City, Country",
-       "rooms": 10,
-       "rating": 4.5,
-       "description": "Hotel description",
-       "guest_count": 20,
-       "bedroom_count": 10,
-       "bathroom_count": 5,
-       "amenities": ["WiFi", "Pool", "Gym"],
-       "address": "123 Street, City",
-       "latitude": 12.3456,
-       "longitude": 78.9012,
-       "room_information": "Information about rooms"
-     }
-     ```
-   - **Response**: The newly created hotel object.
+  ### Testing
 
-### 4. **Update an existing hotel**
-   - **Endpoint**: `PUT /hotels/:id`
-   - **Description**: Update the details of an existing hotel.
-   - **Parameters**: 
-     - `id` (Hotel ID): The ID of the hotel you want to update.
-   - **Request Body**: A JSON object containing the updated hotel details.
-   - **Response**: The updated hotel object.
+- ✅ **Jest** for reliable and fast testing.
+- 🧪 **React** Testing Library:
+  - Ensures React components function as expected.
+- 🔍 **Unit Tests:**
+  - Comprehensive testing for both frontend and backend components to maintain code quality and reliability.
 
-### 5. **Upload images for a hotel**
-   - **Endpoint**: `POST /hotels/images`
-   - **Description**: Upload one or more images for a hotel and update the hotel record with the new image URLs.
-   - **Request Body**: Form-data containing the `hotelId` and the `images`:
-     - `hotelId`: The ID of the hotel you want to associate images with.
-     - `images`: The images to upload (e.g., `image1.jpg`, `image2.jpg`).
-   - **Response**: A JSON object with a success message and the URLs of the uploaded images.
+### ⚙️ Technologies Used
 
-## Key Files
+| Technology          | Purpose            |
+| ------------------- | ------------------ |
+| **Next.js**         | Frontend framework |
+| **React**           | UI components      |
+| **Node.js**         | Backend server     |
+| **Express.js**      | Backend routing    |
+| **TailwindCSS**     | Styling framework  |
+| **Jest**            | Unit testing       |
+| **Testing Library** | Component testing  |
 
-- **server.js**: Contains the API logic for handling requests like creating, updating, and retrieving hotels, and uploading images. This is the main entry point of the application where the server is configured and started.
+## 🚀 Getting Started
 
-- **hotel-id.json**: A JSON file that stores the hotel data in a structured format. It holds all the information about the hotels, including titles, locations, room details, and image URLs.
+### Prerequisites
 
-- **uploads/**: A directory that stores the images uploaded for each hotel. This folder holds the image files that are linked to hotel records and are served via the API.
+Ensure your system meets the following requirements:
 
-- **server.test.js**: Contains test cases for the API endpoints. It uses Jest to test various routes and functionalities such as getting hotel details, creating new hotels, updating hotels, and uploading images. It ensures the correctness and reliability of the application.
-
-
-## ⚙️ Setup
-- **Initialize npm:** npm init -y
-- **Install dependencies:** npm install express cors dotenv
-- **Install development dependencies:**
-   - npm install -D typescript @types/express @types/node @types/cors ts-node nodemon
-   - npm install multer uuid && npm install -D @types/multer @types/uuid
-   - npm install --save-dev jest @types/jest ts-jest
- - **Create the .env file with the following content:** PORT=8000
- - **Set up TypeScript by running:** npx tsc --init
-- **Configure nodemon.json for TypeScript support.**
-- **Add scripts in package.json for easy running**
-- **🧪Unit Testing:** npm test
-
-## 💬 Contact
-
-If you have any questions or want to discuss the project, feel free to contact me through the following:
-
-- 📧 **Email**: [almahmudsiam15@gmail.com](mailto:your.email@example.com)
-- GitHub: [github.com/siam29](https://github.com/your-username)
-
-For contributions, open an issue or a pull request. I welcome your feedback!
-
-
-
+- **Node.js**: Version 16 or later.
+- **npm** or **yarn**: Installed globally on your system.
 
 ---
 
+### 🔧 Running the Application
+
+#### Step 1: Clone the Repository
+
+Clone the repository to your local system:
+
+```bash
+git clone https://github.com/your-repo/full-stack-update.git
+cd full-stack-update
+```
 
 
+#### Step 2: Install Dependencies
 
+### Frontend:
+
+```bash
+npm install
+npm run dev
+```
+- The frontend will be available at http://localhost:3000.
+
+
+### Backend:
+- Open another terminal for running backend 
+
+```
+cd Backend
+node server.js
+```
+- The backend server will be available at http://localhost:8000.
+
+#### Step 2: Testing
+### Frontend Tests
+Run frontend tests using Jest:
+````
+npm test
+````
+
+### Backend Tests
+Run backend tests:
+````
+cd Backend
+npm test
+````
+## 🌐 API Endpoints
+
+The backend server provides the following RESTful API endpoints for managing hotel data and images:
+
+| **Method** | **Endpoint**         | **Description**                       |
+|------------|-----------------------|---------------------------------------|
+| `GET`      | `/hotels`            | Fetch all hotels                      |
+| `GET`      | `/hotels/:id`        | Fetch a specific hotel by ID          |
+| `POST`     | `/hotels`            | Add a new hotel                       |
+| `PUT`      | `/hotels/:id`        | Update an existing hotel              |
+| `POST`     | `/hotels/images`     | Upload images for a specific hotel    |
+
+---
+
+### Example Usage
+
+#### Fetch all hotels:
+**Request:**
+```bash
+GET /hotels
+```
+**Response:**
+```bash
+[
+  {
+    "id": 1,
+    "title": "Hotel Paradise",
+    "location": "Los Angeles",
+    "rooms": 80,
+    "rating": 4.5,
+    "images": ["/uploads/image1.jpg", "/uploads/image2.jpg"],
+    "description": "A luxurious getaway in Los Angeles.",
+    "amenities": ["Spa", "Free Parking", "Gym"],
+    "host_information": {
+      "host_name": "Jane Smith",
+      "contact": "jane.smith@example.com"
+    }
+  }
+]
+```
+
+#### Fetch unique hotels:
+**Request:**
+```bash
+GET /hotels/1
+```
+
+**Response:**
+
+```
+{
+  "id": 1,
+  "title": "Hotel Paradise",
+  "location": "Los Angeles",
+  "rooms": 80,
+  "rating": 4.5,
+  "images": ["/uploads/image1.jpg", "/uploads/image2.jpg"],
+  "description": "A luxurious getaway in Los Angeles.",
+  "amenities": ["Spa", "Free Parking", "Gym"],
+  "host_information": {
+    "host_name": "Jane Smith",
+    "contact": "jane.smith@example.com"
+  }
+}
+```
+
+```
+full-stack-update/
+├── Backend/               # Backend code
+│   ├── server.js          # Express server
+│   ├── hotel-id.json      # Mock database
+│   └── uploads/           # Uploaded images
+├── public/                # Public assets
+├── src/                   # Frontend code
+│   ├── app/               # Next.js app folder
+│   │   ├── layout.tsx     # Main layout for the application
+│   │   ├── page.tsx       # Home page component
+│   │   └── styles.css     # Global styles
+│   ├── components/        # React components
+| F ├── AboutHost.tsx     # Component for host information
+│ R │   ├── AboutProperty.tsx   # Component for property details
+│ O │   ├── Amenities.tsx   # Component for displaying amenities
+│ N │   ├── Api.tsx                # API integration component
+│ T │   ├── CancellationPolicy.tsx # cancellation policies
+│ E │   ├── FirstPage.tsx          # Landing page component
+│ N │   ├── HeaderActions.tsx      # Header action buttons
+│ D │   ├── HouseRules.tsx         # Component for house rules
+│   │   ├── ImportantInformation.tsx # important details
+│   │   ├── Map.tsx                # Map component
+│   │   ├── Navbar.tsx             # Navigation bar
+│   │   ├── PropertyGallery.tsx    # Image gallery  properties
+│   │   ├── PropertyManager.tsx   # Property management features
+│   │   ├── Question.tsx           # Frequently asked questions
+│   │   ├── QuestionSection.tsx    # FAQ section component
+│   │   ├── Reviews.tsx            # Review display
+│   │   ├── RoomAndBed.tsx         # Room and bed details
+│   │   ├── SendMessage.tsx        # Contact host form
+│   │   └── Tab.tsx             # Tab-based navigation component
+│   └── __tests__/         # Test files
+│       ├── components/    # Unit tests for components
+│       └── utils/         # Helper test utilities
+├── jest.setup.ts      # Jest setup file for initializing test 
+├── jest.config.ts     # Jest configuration file for test runner
+├── package.json           # Project metadata and dependencies
+├── tailwind.config.ts     # TailwindCSS configuration
+└── README.md              # Documentation and usage details
+```
+
+## 🔧 Necessary Installations
+Before starting, install the following global dependencies:
+
+- **Node.js** (v16 or later): [Download Node.js](https://nodejs.org/)
+- **npm** or **yarn**: Comes bundled with Node.js.
+- **Git**: [Install Git](https://git-scm.com/).
+
+### Key Backend Libraries:
+- Express.js: For creating RESTful APIs.
+
+```
+npm install express
+```
+- Multer: For handling file uploads.
+
+```
+npm install multer
+```
+CORS (optional): To handle cross-origin requests.
+```
+npm install cors
+```
+### Key Frontend Libraries:
+- React: For building UI components.
+```
+npm install react react-dom
+```
+- Next.js: For server-side rendering and static generation.
+```
+npm install next
+```
+- TailwindCSS: For responsive styling.
+```
+npm install tailwindcss postcss autoprefixer
+```
+- FontAwesome: For icons in the UI.
+```
+npm install @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/react-fontawesome
+```
+
+
+# Contact
+For any inquiries or suggestions, feel free to contact:
+
+- Al Mahmud Siam: almahmudsiam95@gmail.com
+- GitHub: https://github.com/siam29
