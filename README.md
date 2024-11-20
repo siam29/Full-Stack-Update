@@ -74,6 +74,7 @@ cd full-stack-update
 ### Frontend:
 
 ```bash
+cd Frontend
 npm install
 npm run dev
 ```
